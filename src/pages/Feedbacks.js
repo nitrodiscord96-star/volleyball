@@ -34,7 +34,7 @@ export default function Feedbacks() {
               id="email"
               type="email"
               value={form.email}
-              onChange={(e) => setForm({...form, email: e.target.value})}s
+              onChange={(e) => setForm({...form, email: e.target.value})}
               placeholder="name@example.com"
               className="form-control mb-3"
             />
