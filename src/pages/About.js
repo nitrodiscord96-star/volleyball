@@ -5,9 +5,6 @@ export default function About() {
     <div className="d-flex" style={{ minHeight: 'calc(100vh - 56px)' }}>
       {/* Sidebar */}
       <Sidebar />
-      
-      {/* Main Content */}
-      
     </div>
   );
 }

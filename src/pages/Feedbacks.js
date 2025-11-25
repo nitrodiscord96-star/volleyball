@@ -9,7 +9,6 @@ export default function Feedbacks() {
 
   const [feedback, setFeedback] = useState([]);
 
-  // Load from localStorage once
   useEffect(() => {
     const storage = JSON.parse(localStorage.getItem("feedbacks")) ?? [];
     setFeedback(storage);

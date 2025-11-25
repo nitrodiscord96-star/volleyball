@@ -4,19 +4,35 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Sidebar = () => {
     const [sidebarOpen, setSidebarOpen] = useState(true);
-    const [apiReferenceOpen, setApiReferenceOpen] = useState(false);
+    const [historyOpen, setHistoryOpen] = useState(false);
+    const [basicsOpen, setBasicsOpen] = useState(false);
+    const [championshipsOpen, setChampionshipsOpen] = useState(false);
 
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
     }
     
     const toggleSection = (section) => {
-        if (section === 'apiReference') {
-            setApiReferenceOpen(!apiReferenceOpen);
+        if (section === 'history') {
+            setHistoryOpen(!historyOpen);
+        } else if (section === 'basics') {
+            setBasicsOpen(!basicsOpen);
+        } else if (section === 'championships') {
+            setChampionshipsOpen(!championshipsOpen);
         }
     };
     
-    const apiReferenceObjects = [
+    const historyObjects = [
+        { name: 'Payment', link: '/api/payment' },
+        { name: 'Users', link: '/api/users' },
+        { name: 'Matches', link: '/api/matches' },
+    ];
+    const basicsObjects = [
+        { name: 'Payment', link: '/api/payment' },
+        { name: 'Users', link: '/api/users' },
+        { name: 'Matches', link: '/api/matches' },
+    ];
+    const championshipsObjects = [
         { name: 'Payment', link: '/api/payment' },
         { name: 'Users', link: '/api/users' },
         { name: 'Matches', link: '/api/matches' },
@@ -105,28 +121,100 @@ const Sidebar = () => {
                         <div 
                             className="d-flex align-items-center justify-content-between mb-2 p-2 rounded sidebar-item"
                             role="button"
-                            onClick={() => toggleSection('apiReference')}
+                            onClick={() => toggleSection('history')}
                             style={{ cursor: 'pointer' }}
                         >
                             <div className="d-flex align-items-center">
-                                <i className="bi bi-gear me-2"></i>
-                                <span className="text-uppercase small fw-bold">API REFERENCE</span>
+                                <span className="text-uppercase small fw-bold">HISTORY</span>
                             </div>
-                            <div className={`chevron-icon ${apiReferenceOpen ? 'rotated' : ''}`}>
+                            <div className={`chevron-icon ${historyOpen ? 'rotated' : ''}`}>
                                 <ChevronDown size={18} />
                             </div>
                         </div>
                         
                         <div 
-                            className={`collapse-content ${apiReferenceOpen ? 'open' : 'closed'}`}
+                            className={`collapse-content ${historyOpen ? 'open' : 'closed'}`}
                             style={{
-                                maxHeight: apiReferenceOpen ? `${apiReferenceObjects.length * 50}px` : '0px',
-                                opacity: apiReferenceOpen ? 1 : 0,
+                                maxHeight: historyOpen ? `${historyObjects.length * 50}px` : '0px',
+                                opacity: historyOpen ? 1 : 0,
                                 transition: 'max-height 0.4s ease-in-out, opacity 0.3s ease-in-out'
                             }}
                         >
                             <div className="ms-3">
-                                {apiReferenceObjects.map((obj) => (
+                                {historyObjects.map((obj) => (
+                                    <div
+                                        key={obj.name}
+                                        className="d-flex align-items-center justify-content-between text-white p-2 rounded mb-1 sidebar-item"
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => window.open(obj.link, '_blank')}
+                                    >
+                                        <span>{obj.name}</span>
+                                        <i className="bi bi-box-arrow-up-right" style={{ fontSize: '0.8rem' }}></i>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div 
+                            className="d-flex align-items-center justify-content-between mb-2 p-2 rounded sidebar-item"
+                            role="button"
+                            onClick={() => toggleSection('basics')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className="d-flex align-items-center">
+                                <span className="text-uppercase small fw-bold">BASICS</span>
+                            </div>
+                            <div className={`chevron-icon ${basicsOpen ? 'rotated' : ''}`}>
+                                <ChevronDown size={18} />
+                            </div>
+                        </div>
+                        
+                        <div 
+                            className={`collapse-content ${basicsOpen ? 'open' : 'closed'}`}
+                            style={{
+                                maxHeight: basicsOpen ? `${basicsObjects.length * 50}px` : '0px',
+                                opacity: basicsOpen ? 1 : 0,
+                                transition: 'max-height 0.4s ease-in-out, opacity 0.3s ease-in-out'
+                            }}
+                        >
+                            <div className="ms-3">
+                                {basicsObjects.map((obj) => (
+                                    <div
+                                        key={obj.name}
+                                        className="d-flex align-items-center justify-content-between text-white p-2 rounded mb-1 sidebar-item"
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => window.open(obj.link, '_blank')}
+                                    >
+                                        <span>{obj.name}</span>
+                                        <i className="bi bi-box-arrow-up-right" style={{ fontSize: '0.8rem' }}></i>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div 
+                            className="d-flex align-items-center justify-content-between mb-2 p-2 rounded sidebar-item"
+                            role="button"
+                            onClick={() => toggleSection('championships')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className="d-flex align-items-center">
+                                <span className="text-uppercase small fw-bold">CHAMPIONSHIPS</span>
+                            </div>
+                            <div className={`chevron-icon ${championshipsOpen ? 'rotated' : ''}`}>
+                                <ChevronDown size={18} />
+                            </div>
+                        </div>
+                        
+                        <div 
+                            className={`collapse-content ${championshipsOpen ? 'open' : 'closed'}`}
+                            style={{
+                                maxHeight: championshipsOpen ? `${championshipsObjects.length * 50}px` : '0px',
+                                opacity: championshipsOpen ? 1 : 0,
+                                transition: 'max-height 0.4s ease-in-out, opacity 0.3s ease-in-out'
+                            }}
+                        >
+                            <div className="ms-3">
+                                {championshipsObjects.map((obj) => (
                                     <div
                                         key={obj.name}
                                         className="d-flex align-items-center justify-content-between text-white p-2 rounded mb-1 sidebar-item"
