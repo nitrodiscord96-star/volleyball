@@ -20,7 +20,7 @@ const Header = () => {
       <div className="container-fluid px-4">
         <Link className="navbar-brand d-flex align-items-center" to="/">
           <img
-            src="https://cdn.discordapp.com/attachments/1315674560263229570/1441441212367376384/images.jpg?ex=6921ce3d&is=69207cbd&hm=9400cca5f07eb74a0004f0492b5696fe30af73e08acf372580dca726c1354c9a&"
+            src="https://media.discordapp.net/attachments/1329647555335819306/1442826754614886410/volleyball-ball-sport-club-item-vector-48588898.avif?ex=6926d8a0&is=69258720&hm=dc9a92ad2b585d9157e4a3f4c8d5b7d97dfd14d56e311c8166ca733831f749c4&=&format=webp&quality=lossless&width=571&height=571"
             alt="VolleyBall"
             width="45"
             height="45"
