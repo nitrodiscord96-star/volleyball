@@ -1,8 +1,13 @@
+import Sidebar from "../Components/Sidebar";
+
 export default function About() {
   return (
-    <div className="hero-section bg-dark text-white text-center py-5">
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the main landing page of the Volleyball application.</p>
+    <div className="d-flex" style={{ minHeight: 'calc(100vh - 56px)' }}>
+      {/* Sidebar */}
+      <Sidebar />
+      
+      {/* Main Content */}
+      
     </div>
   );
 }

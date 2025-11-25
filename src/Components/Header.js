@@ -15,7 +15,7 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg sticky-top fixed-top">
       <div className="container-fluid px-4">
         <Link className="navbar-brand d-flex align-items-center" to="/">
           <img

@@ -11,7 +11,6 @@ export default function Home() {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const scrollIndicatorRef = useRef(null);
-  // const statsRef = useRef(null);
   const featuresTitleRef = useRef(null);
   const card1Ref = useRef(null);
   const card2Ref = useRef(null);
@@ -21,7 +20,6 @@ export default function Home() {
   const whyCard2Ref = useRef(null);
   const whyCard3Ref = useRef(null);
   const whyCard4Ref = useRef(null);
-  const ctaRef = useRef(null);
 
   useGSAP(() => {
     const heroTl = gsap.timeline();
@@ -162,41 +160,6 @@ export default function Home() {
           delay: index * 0.1
         }
       );
-    });
-
-    gsap.fromTo(ctaRef.current,
-      { 
-        scale: 0.8,
-        opacity: 0,
-        y: 100,
-        rotationX: -30
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        duration: 1.5,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: ctaRef.current,
-          start: "top 70%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    const ctaButton = ctaRef.current.querySelector('button');
-    gsap.to(ctaButton, {
-      scale: 1.05,
-      duration: 0.8,
-      ease: "power1.inOut",
-      repeat: -1,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: ctaRef.current,
-        start: "top 70%"
-      }
     });
 
   }, []);
@@ -380,8 +343,10 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="bg-dark border-top border-primary border-3"></div>
+
       {/* CTA Section */}
-      <section ref={ctaRef} className="py-5 bg-primary text-white position-relative overflow-hidden">
+      {/* <section ref={ctaRef} className="py-5 bg-primary text-white position-relative overflow-hidden">
         <div className="container text-center py-5">
           <h2 className="display-2 fw-black mb-4 text-uppercase">
             Your Journey Starts NOW
@@ -395,7 +360,7 @@ export default function Home() {
             Enter The Arena →
           </button>
         </div>
-      </section>
+      </section> */}
 
       <style>{`
         .bounce-animation {
