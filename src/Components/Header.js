@@ -8,11 +8,8 @@ const Header = () => {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/history", label: "History" },
-    { path: "/basics", label: "Basics" },
-    { path: "/championships", label: "Championships" },
+    { path: "/about", label: "About" },
     { path: "/feedbacks", label: "Feedbacks" },
-    { path: "/about", label: "About US" },
   ];
 
   const isActive = (path) => location.pathname === path;
